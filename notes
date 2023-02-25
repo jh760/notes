@@ -1,0 +1,35 @@
+// asciil.c
+
+#include <stdio.h>
+
+int main(void) {
+    unsigned char c;
+
+    for (c = 0; c <= 127; ++c) {
+        printf("%3d  0x%03x", c, c);
+
+        // check for printable character
+        if (c >= ' ' && c <= '~') {
+            printf(" '%c' ", c);
+        }
+
+        // check for digit
+        if (c >= '0' && c <= '9') {
+            printf("digit");
+        }
+
+        // check for uppercase
+        if (c >= 'A' && c <= 'Z') {
+            printf("uppercase");
+       }
+       // check for lowercase
+       if (c >= 'a' && c <= 'z') {
+            printf("lowercase");
+       }
+
+       printf("/n");
+
+    }
+    return 0;
+}
+
